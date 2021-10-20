@@ -1,10 +1,10 @@
-package com.rest.microservices.limitservices;
+package com.learn.microservice.limitsservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LimitServicesApplicationTests {
+class LimitsServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
