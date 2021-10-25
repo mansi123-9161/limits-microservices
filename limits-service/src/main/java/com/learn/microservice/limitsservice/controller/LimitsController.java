@@ -8,7 +8,7 @@ import com.learn.microservice.limitsservice.bean.Limits;
 import com.learn.microservice.limitsservice.config.LimitConfig;
 
 @RestController
-public class LimitController {
+public class LimitsController {
 	@Autowired
 	private LimitConfig limitConfig;
 	
