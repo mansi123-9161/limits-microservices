@@ -13,12 +13,16 @@ import io.github.resilience4j.retry.annotation.Retry;
 public class CircuitBreakerController {
 	private Logger logger=LoggerFactory.getLogger(CircuitBreakerController.class);
 	@GetMapping("/sampleMapping")
-	@Retry(name = "sampleApi")
+	@Retry(name = "sampleApi", fallbackMethod = "defaultResponse")
 	public String CircuitApi(){
 		/* by default it will retry 3 times */
 		logger.info("sample call recieved");
 		ResponseEntity<String> entity = new RestTemplate().getForEntity("http://8089/spring", String.class);
 		return entity.getBody();
+	}
+	
+	public String defaultResponse(Exception ex) {
+		return "default value";
 	}
 
 }
